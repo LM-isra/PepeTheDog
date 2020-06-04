@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using System.Threading.Tasks;
 using PepeTheDog.Core;
-using PepeTheDog.Core.Entities.Auth;
 using PepeTheDog.Core.Dtos.Auth;
-
 using PepeTheDog.Core.Services.Auth;
 using AutoMapper;
-
 
 namespace PepeTheDog.Services.Auth
 {
@@ -21,6 +16,8 @@ namespace PepeTheDog.Services.Auth
 
         public async Task AssignUserRole(UpdateRolUserDto rol)
         {
+
+
             await _unitOfWork.Users.AssignUserRole(rol);
         }
 

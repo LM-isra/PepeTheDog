@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Threading.Tasks;
 using PepeTheDog.Core.Entities.Auth;
 using PepeTheDog.Core.Repositories.Auth;
 using PepeTheDog.Core.Dtos.Auth;

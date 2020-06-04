@@ -12,10 +12,8 @@ namespace PepeTheDog.Data.Repositories
     {
         protected readonly DbContext Context;
 
-        public Repository(DbContext context)
-        {
-            this.Context = context;
-        }
+        public Repository(DbContext context) => Context = context;
+        
         public async Task AddAsync(TEntity entity)
         {
             await Context.Set<TEntity>().AddAsync(entity);

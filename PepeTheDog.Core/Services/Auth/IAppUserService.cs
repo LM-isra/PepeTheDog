@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using PepeTheDog.Core.Dtos.Auth;
 
 namespace PepeTheDog.Core.Services.Auth

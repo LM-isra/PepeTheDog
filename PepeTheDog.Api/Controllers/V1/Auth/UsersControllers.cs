@@ -1,10 +1,6 @@
-﻿using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PepeTheDog.Core.Services.Auth;
-using AutoMapper;
-using PepeTheDog.Data;
-using PepeTheDog.Core.Entities.Auth;
 using PepeTheDog.Core.Dtos.Auth;
 
 namespace PepeTheDog.Api.Controllers.V1
@@ -17,14 +13,14 @@ namespace PepeTheDog.Api.Controllers.V1
 
         public UsuersController(IAppUserService appUserService) => _appUserService = appUserService;
 
-        [Route("AsignarUsuarioRol")]
-        public async Task<ActionResult> AsignarRolUsuario(UpdateRolUserDto rol)
+        [HttpPost("AsignarUsuarioRol")]
+        public async Task<ActionResult> AssignUserRole(UpdateRolUserDto rol)
         {
             await _appUserService.AssignUserRole(rol);
             return Ok();
         }
 
-        [Route("RemoverUsuarioRol")]
+        [HttpDelete("RemoverUsuarioRol")]
         public async Task<ActionResult> RemoverUsuarioRol(UpdateRolUserDto rol)
         {
             await _appUserService.RemoveUserRole(rol);

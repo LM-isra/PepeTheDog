@@ -1,10 +1,14 @@
-﻿//using AutoMapper;
-//using PepeTheDog.Api.Dto;
-//using MyMusic.Core.Models;
+﻿using AutoMapper;
+using PepeTheDog.Core.Entities.Auth;
+using PepeTheDog.Services.Dtos.Auth;
 
 namespace PepeTheDog.Api.Mapping
 {
-    public class MappingProfile
+    public class MappingProfile : Profile
     {
+        public MappingProfile()
+        {
+            CreateMap<UpdateRolUserDto, AppUser>().ReverseMap();
+        }
     }
 }

@@ -6,7 +6,6 @@ using PepeTheDog.Core.Repositories.Auth;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +19,7 @@ namespace PepeTheDog.Data.Repositories.Auth
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IConfiguration _configuration;
 
-        public AccountRepository(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration)
+        public AccountRepository(AppDbContext context, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IConfiguration configuration) : base(context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -80,6 +79,5 @@ namespace PepeTheDog.Data.Repositories.Auth
                 Expiration = expiration
             };
         }
-    
     }
 }
